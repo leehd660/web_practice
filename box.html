@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>box model</title>
+    <style>
+      h1, a {
+        /* display: hidden; */
+        /* visibility:hidden; */
+        border: 5px solid red;
+        /* 역시 다음과 같이 중복제거가 가능함.
+        border-width:5px;
+        border-color:red;
+        border-style:solid; */
+        padding:20px;
+        margin:20px;
+        display:block;
+        width:100px;
+      }
+      /* 중복제거가 가능함 */
+      /* a {
+        border-width:5px;
+        border-color:red;
+        border-style:solid;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>CSS</h1>
+    <h1>CSS</h1>
+    <!-- <p>Cascading Style Sheets (<a href="https://ko.wikipedia.org/wiki/CSS">CSS</a>) is a stylesheet language used to
+    describe the presentation of a document written in HTML or XML (including XML
+     dialects such as SVG, MathML or XHTML). CSS describes how elements should be
+      rendered on screen, on paper, in speech, or on other media.</p> -->
+  </body>
+</html>
+
+<!-- 8장 박스 모델
+<h1>태그는 화면 전체를 쓰고 줄바꿈 역시 됨. 하지만 <a>태그는 그렇지 않음.
+이 크기를 짐작하기 위해서 태그의 테두리를 그릴 수 있음. 테두리의 두께 : width, 스타일 : 점선(dashed 등등)인지 실선(solid)인지
+html에 있는 여러 태그들ㅇ느 태그의 성격과 일반적인 쓰임에 따라 화면 전체를 쓰는게 편한것과 자신의 크기만큼의 부피를 갖는 게 편한 것이
+있기 때문에 두가지로 나뉜다.
+화면 전체를 쓰는 태그 : block level element(블록 레벨 엘리먼트)
+ -> 하지만 블록이여도 인라인만큼 크기를 쓰게 만들 수 있음. display라는 속성을 이용해서 display: inline
+자기 자신의 콘텐츠 크기만큼 쓰는 태그 : inline element(인라인 엘리먼트)
+콘텐츠와 테두리의 여백을 두고 싶으면 : padding
+연결된 테두리 사이의 간격 margin  -->
