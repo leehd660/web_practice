@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div {
+        border: 5px solid gray;
+      }
+      #grid {
+        border: 5px solid pink;
+        display: grid;
+        /* 그리드템플릿을 column으로 바꾸겠다는 것 */
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="grid">
+      <div>NAVIGATION</div>
+      <div>ARTICLE</div>
+      <div>Example</div>
+    </div>
+  </body>
+</html>
+
+<!-- 10장 그리드 소개
+디자인이란 목적을 위해 어떤 의미도 없는 태그를 사용해야할 때가 있음 -> <div>태그로 division의 약자
+div태그는 기본적으로 block level element이기 때문에 줄바꿈이 됨.
+div와 똑같은 목적으로 고안된 태그가 있는데 바로 <span>태그
+<span>태그는 inline 엘리멘트임. 따라서 목적에 맞게 사용하면 됨.
+
+display를 grid로 만들고, grid-template-colums를 이용해서 첫번째 칼럼은 150px만큼 갖고, 두번째 갈럼이 나머지 공간을 쓴다는 속성을 추가
+150px를 1fr로 바꾸면 두 칼럼이 똑같아짐. fr은 비율이고, px는 일정한 크기.   -->
