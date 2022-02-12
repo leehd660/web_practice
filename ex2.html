@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" value="Hi" onclick="alert('hi')">
+    <!-- 이렇게 작성하면 텍스트 상자를 생성함. -->
+    <input type="text" onchange="alert('changed')"/>
+    <input type="text" onkeydown="alert('key down!')"/>
+  </body>
+</html>
+
+<!-- 이벤트
+input 태그 : 타입에 버튼을 넣으면 버튼이 되고 , 버튼에 글자를 넣고 싶으면 value라는 속성을 이용
+버튼에서 버튼을 눌렀을 때, 효과를 나타내기 위해서 onclick속성을 이용
+onclick속성은 값으로 자바스크립트 코드가 와야. 경고창을 띄우는 JS코드가 바로 alert
+event : 웹브라우저에서 일어나는 일들을 이벤트라고 함.
+어떤 이벤트가 일어났을 때 어떠한 자바스크립트 코드를 실행하게 하는 것이 onclick이라는 .
+웹 브라우저에서 일어날 수 있는 이벤트 중 중요한거 몇개가 있음
+1.button
+2.text : 글자를 입력할 수 있음. 글자를 입력하면 내용이 변화하는데 그걸 체크하는 이벤트도 있음
+onchange 속성 : ABC를 입력하고 마우스 커서를 바깥쪽으로 빼서 클릭하면 웹브라우저가 onchange이벤트를 실행 시킴
+ -->
