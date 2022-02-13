@@ -4,19 +4,51 @@
     <title>WEB1 - JS</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script>
+      function dayNightHandler(self, btnId) {
+        var target = document.querySelector('body');
+        // 이벤트 안에서 this는 이벤트가 소속된 태그를 가리키도록 약속됨.
+        //따라서 함수안에서는 this대신 self를, 함수를 사용하는 곳에서는 this를 이용해야함.
+         if(self.value === 'night') {
+           target.style.backgroundColor='black';
+           target.style.color='white';
+           self.value = 'day';
+           document.querySelector(btnId).value = 'day';
+
+           var arr = document.querySelectorAll('a');
+           var index=0;
+           while (index<arr.length) {
+             arr[index].style.color='powderblue';
+             index = index+1;
+           }
+         }
+         else {
+           target.style.backgroundColor='white';
+           target.style.color='black';
+           self.value = 'night';
+           document.querySelector(btnId).value = 'night';
+
+           var arr = document.querySelectorAll('a');
+           var index=0;
+           while (index<arr.length) {
+             arr[index].style.color='blue';
+             index = index+1;
+           }
+         }
+      }
+    </script>
   </head>
 
   <body>
     <h1><a href="index.html">WEB</a></h1>
     <div id="grid">
       <div id="col1">
-        <input type="button" value="day" onclick="
+        <!-- <input type="button" value="day" onclick="
           document.querySelector('body').style.backgroundColor='white';
           document.querySelector('body').style.color='black';
-        ">
-        <input type="button" value="night" onclick="
-          document.querySelector('body').style.backgroundColor='black';
-          document.querySelector('body').style.color='white';
+        "> -->
+        <input id="btn1" type="button" value="night" onclick="
+          dayNightHandler(this, '#btn2');
         ">
         <ol>
           <li><a href="1.html">HTML</a></li>
@@ -28,7 +60,7 @@
       <div id="article">
         <h2>Java Script란 무엇인가?</h2>
 
-        <p>자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며,
+        <p>&lt;자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. 이 언어는 웹 브라우저 내에서 주로 사용하며,
           다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. 또한 Node.js와 같은 런타임 환경과 같이 서버 프로그
           래밍에도 사용되고 있다. 자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는
            모카(Mocha)라는 이름으로, 나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다
@@ -36,6 +68,9 @@
            을 뒀기 때문이고, 자바와 자바스크립트는 직접적인 연관성은 약하다. 이름과 구문 외에는 자바보다 셀프나 스킴과 유사성이 많다.
            자바스크립트는 ECMA스크립트(ECMAScript)의 표준 사양을 가장 잘 구현한 언어로 인정받고 있으며 ECMAScript 5 (ES5) 까지는 대부
            분의 브라우저에서 기본적으로 지원되었으나 ECMAScript 6 이후부터는 브라우저 호환성을 위해 트랜스파일러로 컴파일된다.</p>
+           <input id="btn2" type="button" value="night" onclick="
+             dayNightHandler(this, '#btn1');
+           ">
        </div>
      </div>
   </body>
@@ -43,3 +78,14 @@
 
 <!-- JS : 제어할 태그 선택하기
 배경색을 바꾸기 위해서는 body태그를 선택해야함. -->
+
+<!-- 조건문 : 조건에 따라 다른 순서의 기능들이 실행되게 하는 것
+day와 night의 버튼이 두개인 것을 하나의 버튼으로 만들고 싶다. : 두가지 상태를 가지는 스위치
+boolean
+1. === : 왼쪽과 오른쪽의 값이 같은지 판단
+2. 문자열로 <를 출력하기 위해서는 &lt;(less than 이라는 뜻)로 적어야함 -->
+
+<!-- 변수를 설정해주고, this를 이용해서 중복을 줄여준다. -->
+
+<!-- js의 array는 java에서 list라고 생각하면 될거 같음.
+js array를 만들 때, var 변수명 = [1,2]이런 식으로 만들고/ push를 통해 추가할 수 있으며, -->
