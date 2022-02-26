@@ -5,35 +5,62 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
     <script>
+      //객체에 소속된 변수를 프로퍼티라고 하고, 객체에 소속된 함수를 메서드라고 한다.
+      var Body = {
+        // "target" : document.querySelector('body'),
+        setBackgroundColor : function(color) {
+          document.querySelector('body').style.backgroundColor=color;
+        },
+        setColor : function(color) {
+          document.querySelector('body').style.color=color;
+        }
+      }
+      var Links = {
+        setColor : function(value) {
+          // var:변수 중복선언 허용(에러발생 X) , 함수레벨 스코프, 변수 hoisting
+          //let : 변수 중복 선언 금지, 블록레벨 스코프, 변수 hoisting이 발생하지 않는 것처럼 동작
+          let arr = document.querySelectorAll('a');
+          var index = 0;
+          while(index<arr.length) {
+            if (value === 'night') {
+              arr[index].style.color = 'powderblue';
+            }
+            else {
+              arr[index].style.color = 'blue';
+            }
+            index = index+1;
+          }
+        }
+      }
       function dayNightHandler(self, btnId) {
         var target = document.querySelector('body');
         // 이벤트 안에서 this는 이벤트가 소속된 태그를 가리키도록 약속됨.
         //따라서 함수안에서는 this대신 self를, 함수를 사용하는 곳에서는 this를 이용해야함.
          if(self.value === 'night') {
-           target.style.backgroundColor='black';
-           target.style.color='white';
+           Body.setBackgroundColor('black');
+           Body.setColor('white');
+           // target.style.backgroundColor='black';
+           // target.style.color='white';
+           // setColor(self.value);
+           Links.setColor(self.value);
            self.value = 'day';
            document.querySelector(btnId).value = 'day';
-
-           var arr = document.querySelectorAll('a');
-           var index=0;
-           while (index<arr.length) {
-             arr[index].style.color='powderblue';
-             index = index+1;
-           }
+           // let arr = document.querySelectorAll('a');
+           // var index=0;
+           // while (index<arr.length) {
+           //   arr[index].style.color='powderblue';
+           //   index = index+1;
+           // }
          }
          else {
-           target.style.backgroundColor='white';
-           target.style.color='black';
+           Body.setBackgroundColor('white');
+           Body.setColor('black');
+           // target.style.backgroundColor='white';
+           // target.style.color='black';
+           Links.setColor(self.value);
+           // setColor(self.value);
            self.value = 'night';
            document.querySelector(btnId).value = 'night';
-
-           var arr = document.querySelectorAll('a');
-           var index=0;
-           while (index<arr.length) {
-             arr[index].style.color='blue';
-             index = index+1;
-           }
          }
       }
     </script>
